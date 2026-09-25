@@ -1,0 +1,21 @@
+{
+  "name": "prompt-optimizer-plugin",
+  "owner": {
+    "name": "digitalcomposer"
+  },
+  "metadata": {
+    "description": "Marketplace for the prompt-optimizer Claude Code plugin.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "prompt-optimizer",
+      "description": "Proactively rewrites vague or unstructured prompts using 3Cs/OPAL/Self-Ask techniques before Claude acts on them.",
+      "version": "0.1.0",
+      "author": {
+        "name": "digitalcomposer"
+      },
+      "source": "./plugins/prompt-optimizer"
+    }
+  ]
+}
