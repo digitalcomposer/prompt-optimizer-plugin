@@ -39,7 +39,7 @@ claude plugin install prompt-optimizer@prompt-optimizer-plugin
 From GitHub, on any machine with Claude Code installed:
 
 ```bash
-claude plugin marketplace add <github-owner>/<repo>
+claude plugin marketplace add digitalcomposer/prompt-optimizer-plugin
 claude plugin install prompt-optimizer@prompt-optimizer-plugin
 ```
 
