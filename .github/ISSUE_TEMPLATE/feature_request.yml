@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a change to when/how the optimizer fires, or a new decision rule.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's missing or annoying today?
+      description: A concrete case where the current PASS/ENHANCE/CLARIFY behavior does the wrong thing.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should happen instead? Reference the relevant section of `agents/prompt-optimizer.md` if you know it.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example prompt(s)
+      description: One or more raw prompts that illustrate the case, with what you'd want returned.

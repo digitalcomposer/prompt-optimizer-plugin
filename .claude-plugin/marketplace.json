@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "Marketplace for the prompt-optimizer Claude Code plugin.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "prompt-optimizer",
       "description": "Proactively normalizes vague or unstructured prompts into minimal, precise task instructions (PASS/ENHANCE/CLARIFY) before Claude acts on them.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "digitalcomposer"
       },

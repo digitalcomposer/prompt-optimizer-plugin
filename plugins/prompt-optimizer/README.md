@@ -1,6 +1,11 @@
 # prompt-optimizer
 
-Proactively normalizes vague, conversational, incomplete, or poorly
+[![Validate](https://github.com/digitalcomposer/prompt-optimizer-plugin/actions/workflows/validate.yml/badge.svg)](https://github.com/digitalcomposer/prompt-optimizer-plugin/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../LICENSE)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-plugin-cc785c)](https://docs.claude.com/en/docs/claude-code)
+
+A [Claude Code](https://docs.claude.com/en/docs/claude-code) plugin that
+proactively normalizes vague, conversational, incomplete, or poorly
 structured requests into minimal, precise task instructions before Claude
 acts on them — while preserving the user's intent, context, language, and
 explicit constraints.
@@ -94,7 +99,7 @@ Look for an entry like this in the output:
 
 ```
 ❯ prompt-optimizer@prompt-optimizer-plugin
-  Version: 0.1.0
+  Version: 0.2.0
   Scope: user
   Status: ✔ enabled
 ```

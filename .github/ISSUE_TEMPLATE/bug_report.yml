@@ -1,0 +1,45 @@
+name: Bug report
+description: The prompt-optimizer subagent doesn't fire, fires wrongly, or produces a broken rewrite.
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      description: Output of `claude plugin list`
+      placeholder: prompt-optimizer@prompt-optimizer-plugin — Version 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: cli-version
+    attributes:
+      label: Claude Code version
+      description: Output of `claude --version`
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: The prompt you sent
+      description: The exact raw message you typed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Should it have fired at all? What rewrite (if any) did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Did it fire? What did it return? Paste the exact output if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Conversation context that might matter (e.g. what came right before this message), language used, etc.
