@@ -1,0 +1,41 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON manifests parse
+        run: |
+          set -e
+          for f in .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json; do
+            echo "Checking $f"
+            jq empty "$f"
+          done
+
+      - name: Marketplace lists every plugin directory
+        run: |
+          set -e
+          for dir in plugins/*/; do
+            name=$(basename "$dir")
+            grep -q "\"$name\"" .claude-plugin/marketplace.json || {
+              echo "::error::plugins/$name has no entry in .claude-plugin/marketplace.json"
+              exit 1
+            }
+          done
+
+      - name: Every agent file has required frontmatter
+        run: |
+          set -e
+          for f in plugins/*/agents/*.md; do
+            echo "Checking $f"
+            grep -q "^name:" "$f" || { echo "::error file=$f::missing 'name:' frontmatter"; exit 1; }
+            grep -q "^description:" "$f" || { echo "::error file=$f::missing 'description:' frontmatter"; exit 1; }
+          done
