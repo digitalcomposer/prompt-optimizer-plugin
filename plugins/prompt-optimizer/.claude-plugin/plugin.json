@@ -1,7 +1,7 @@
 {
   "name": "prompt-optimizer",
   "version": "0.1.0",
-  "description": "Proactively rewrites vague or unstructured prompts using 3Cs/OPAL/Self-Ask techniques before Claude acts on them.",
+  "description": "Proactively normalizes vague or unstructured prompts into minimal, precise task instructions (PASS/ENHANCE/CLARIFY) before Claude acts on them.",
   "author": {
     "name": "digitalcomposer"
   }

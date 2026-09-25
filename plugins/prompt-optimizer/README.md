@@ -1,17 +1,24 @@
 # prompt-optimizer
 
-Proactively rewrites vague or unstructured prompts before Claude acts on
-them, using three prompting techniques:
+Proactively normalizes vague, conversational, incomplete, or poorly
+structured requests into minimal, precise task instructions before Claude
+acts on them — while preserving the user's intent, context, language, and
+explicit constraints.
 
-- **3Cs** (Context/Clarity/Constraints) — default template.
-- **OPAL** (Observations/Process/Action/Limitations) — for structured
-  content-creation tasks ("write a guide to X").
-- **Self-Ask** — appended conditionally for analytical/multi-factor
-  questions.
+It classifies every request into one of three modes:
 
-It deliberately does not use Least-to-Most prompting (needs a multi-turn
-feedback loop) or Temperature (not a usable API parameter on current
-Claude models).
+- **PASS** — already clear and actionable; returned unchanged or with only
+  trivial normalization.
+- **ENHANCE** — intent is clear but execution would materially benefit
+  from better structure or specificity; rewritten to the minimal
+  sufficient instruction for the task at hand.
+- **CLARIFY** — missing information is genuinely blocking; asks the
+  minimum number of precise questions instead of guessing.
+
+It is domain-agnostic (works the same for code, writing, research,
+planning, analysis, etc.), never invents requirements the user didn't
+state or imply, and never solves the underlying task itself — it only
+reformulates the instruction.
 
 ## How it triggers
 
